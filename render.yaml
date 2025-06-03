@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: image-analyzer-api
+    env: python
+    repo: https://github.com/BMPKSF/image_analyzer.git
+    branch: main
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port 10000"
+    envVars:
+      - key: PORT
+        value: 10000
